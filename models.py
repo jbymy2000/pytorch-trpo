@@ -2,7 +2,7 @@ import torch
 import torch.autograd as autograd
 import torch.nn as nn
 
-
+## 策略网络，用于输出策略值
 class Policy(nn.Module):
     def __init__(self, num_inputs, num_outputs):
         super(Policy, self).__init__()
@@ -30,6 +30,7 @@ class Policy(nn.Module):
         return action_mean, action_log_std, action_std
 
 
+# 估值网络，用来输出动作的价值。
 class Value(nn.Module):
     def __init__(self, num_inputs):
         super(Value, self).__init__()
